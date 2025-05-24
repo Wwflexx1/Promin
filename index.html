@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Промінь</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="font-sans">
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <img src="logo.png" alt="Logo Image" class="logo-image">
+        </div>
+        <nav class="nav">
+            <a href="#top" class="nav-link">Каталог</a>
+            <a href="#map" class="nav-link">Як нас знайти</a>
+            <a href="#footer" class="nav-link">Контакти</a>
+            <a href="story.html" class="nav-link">Про нас</a>
+            <div class="dropdown">
+                <button class="dropdown-toggle">
+                    <span>Вхід/Реєстрація</span>
+                    <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="login-form">
+                    <input type="text" placeholder="Номер телефона" class="login-input">
+                    <input type="password" placeholder="Пароль" class="login-input">
+                    <button class="login-button">Увійти</button>
+                    <a href="#" class="forgot-password">Забули пароль</a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-button cart-button">🛒 <span class="cart-count">0</span></button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="close-cart">&times;</span>
+            <h2>Ваша корзина</h2>
+            <div class="cart-items" id="cartItems">
+            </div>
+            <div class="cart-total">
+                <p>Загальна сума: <span id="cartTotal">0</span> грн</p>
+            </div>
+            <button class="checkout-button">Оформити замовлення</button>
+        </div>
+    </div>
+
+    <section class="hero" id="top">
+        <div class="hero-image">
+            <img src="greenhouse.jpg" alt="Hero Background" class="banner-image">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Промінь</h1>
+            <p class="hero-subtitle">Найвигідніший постачальник городини в Полтаві</p>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2 class="products-title">Актуально зараз</h2>
+        <div class="products-grid">
+        </div>
+    </section>
+
+    <section class="map-section" id="map">
+        <h2 class="map-title">Як нас знайти</h2>
+        <div class="arrow-container">
+            <svg class="arrow-down" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.7883876183146!2d33.04086797682961!3d49.99657671993946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d65c273bf3fa11%3A0xc2ce19a08e76c1a3!2z0LLRg9C70LjRhtGPINCl0LDRgNC60ZbQstGB0YzQutCwLCAxMSwg0JfQsNGB0YPQu9C70Y8sINCf0L7Qu9GC0LDQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGM!5e0!3m2!1sru!2sua!4v1748048010243!5m2!1sru!2sua" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <p>м. Полтава, Полтавська область, Лубенський район, село Засулля, Харківська вулиця, 11А</p>
+            <p>Телефон: +380148822854</p>
+            <p>Email: info@promin.com</p>
+            <div class="footer-buttons">
+                <a href="https://www.instagram.com" target="_blank" class="footer-button">Instagram</a>
+                <a href="https://maps.app.goo.gl/EYzxLAC3xS1Dc7sM6" target="_blank" class="footer-button">Google Maps</a>
+                <a href="story.html" class="footer-button">Про нас</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "Помідори", price: 150, unit: "кг", image: "product_1.png" },
+            { id: 2, name: "Огірки", price: 70, unit: "кг", image: "product_2.png" },
+            { id: 3, name: "Морква", price: 40, unit: "кг", image: "product_3.png" },
+            { id: 4, name: "Перець", price: 150, unit: "кг", image: "product_4.png" },
+            { id: 5, name: "Капуста", price: 40, unit: "кг", image: "product_5.png" },
+            { id: 6, name: "Редиска", price: 65, unit: "кг", image: "product_6.png" },
+            { id: 7, name: "Цибуля", price: 25, unit: "кг", image: "product_7.png" },
+            { id: 8, name: "Буряк", price: 40, unit: "кг", image: "product_8.png" },
+            { id: 9, name: "Сік яблучний", price: 180, unit: "л", image: "product_9.png" },
+            { id: 10, name: "Сік вишневий", price: 200, unit: "л", image: "product_10.png" },
+            { id: 11, name: "Сік морквяний", price: 150, unit: "л", image: "product_11.png" },
+            { id: 12, name: "Сік апельсиновий", price: 200, unit: "л", image: "product_12.png" }
+        ];
+
+        let cart = [];
+        const cartModal = document.getElementById('cartModal');
+        const cartItemsContainer = document.getElementById('cartItems');
+        const cartTotalElement = document.getElementById('cartTotal');
+        const cartCountElement = document.querySelector('.cart-count');
+
+        const productsGrid = document.querySelector('.products-grid');
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'card-hover';
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="card-image">
+                <div class="overlay">
+                    <p class="overlay-price">Ціна: ${product.price} грн/${product.unit}</p>
+                    <p class="overlay-stock">В наявності</p>
+                    <button class="overlay-button" data-id="${product.id}">Додати в кошик</button>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">${product.name}</h3>
+                </div>
+            `;
+            productsGrid.appendChild(productCard);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('overlay-button')) {
+                const productId = parseInt(e.target.getAttribute('data-id'));
+                const product = products.find(p => p.id === productId);
+                
+                const existingItem = cart.find(item => item.id === productId);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        unit: product.unit,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+            }
+        });
+
+        function updateCart() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+            
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>${item.price} грн/${item.unit}</p>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                        <button class="remove-btn" data-id="${item.id}">×</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            
+            cartTotalElement.textContent = total;
+        }
+
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('quantity-btn')) {
+                const productId = parseInt(e.target.getAttribute('data-id'));
+                const item = cart.find(item => item.id === productId);
+                
+                if (e.target.classList.contains('plus')) {
+                    item.quantity += 1;
+                } else if (e.target.classList.contains('minus')) {
+                    if (item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        cart = cart.filter(item => item.id !== productId);
+                    }
+                }
+                
+                updateCart();
+            }
+            
+            if (e.target.classList.contains('remove-btn')) {
+                const productId = parseInt(e.target.getAttribute('data-id'));
+                cart = cart.filter(item => item.id !== productId);
+                updateCart();
+            }
+        });
+
+        const cartButton = document.querySelector('.cart-button');
+        const closeCart = document.querySelector('.close-cart');
+        
+        cartButton.addEventListener('click', function() {
+            cartModal.style.display = 'block';
+        });
+        
+        closeCart.addEventListener('click', function() {
+            cartModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === cartModal) {
+                cartModal.style.display = 'none';
+            }
+        });
+
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const loginForm = document.querySelector('.login-form');
+        
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.style.display = loginForm.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!dropdownToggle.contains(e.target) && !loginForm.contains(e.target)) {
+                loginForm.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
